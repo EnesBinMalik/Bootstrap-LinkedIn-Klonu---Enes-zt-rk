@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+/* LinkedIn Color Palette & System Styles */
+:root {
+  --linkedin-blue: #0a66c2;
+  --linkedin-blue-hover: #004182;
+  --linkedin-bg: #f3f2ef;
+  --linkedin-border: #e0e0e0;
+  --linkedin-text-main: #191919;
+  --linkedin-text-muted: #666666;
+
+  /* Assignment Specific Action Colors */
+  --color-photo: #70B5F9;
+  --color-video: #7FC15E;
+  --color-event: #E7A33E;
+  --color-article: #F5987E;
+}
+
+body {
+  background-color: var(--linkedin-bg) !important;
+  color: var(--linkedin-text-main);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Navbar Fixed & Border Bottom */
+.linkedin-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--linkedin-border);
+  height: 54px;
+}
+
+/* 8. Main container offset for fixed navbar */
+.main-content-layout {
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+}
+
+/* 9. Layout container max width */
+.linkedin-container {
+  max-width: 1128px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Navbar Nav Items */
+.nav-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  color: var(--linkedin-text-muted) !important;
+  font-size: 11.5px;
+  font-weight: 500;
+  min-width: 60px;
+  padding: 4px 6px;
+  position: relative;
+  transition: color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-icon-link:hover,
+.nav-icon-link.active {
+  color: var(--linkedin-text-main) !important;
+}
+
+.nav-icon-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #191919;
+}
+
+/* 11. Profile Avatar */
+.profile-card-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-top: -36px;
+  background-color: #ffffff;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+/* 14. Sticky 'En Yeni' left section with 4rem top */
+.sticky-en-yeni {
+  position: sticky !important;
+  top: 4rem !important;
+  overflow: visible !important;
+  z-index: 10;
+}
+
+/* 24. Sticky right section with 4rem top */
+.sticky-sag-panel {
+  position: sticky !important;
+  top: 4rem !important;
+  overflow: visible !important;
+  z-index: 10;
+}
+
+/* 17. Action Icons Fills */
+.icon-photo-fill {
+  fill: #70B5F9 !important;
+  color: #70B5F9 !important;
+}
+
+.icon-video-fill {
+  fill: #7FC15E !important;
+  color: #7FC15E !important;
+}
+
+.icon-event-fill {
+  fill: #E7A33E !important;
+  color: #E7A33E !important;
+}
+
+.icon-article-fill {
+  fill: #F5987E !important;
+  color: #F5987E !important;
+}
+
+/* 20. Cleaned up CSS card styles */
+.linkedin-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid var(--linkedin-border);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+/* 21. Reaction icons with proper margin */
+.reaction-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: -4px;
+  border: 1.5px solid #ffffff;
+}
+
+.reaction-badge:last-child {
+  margin-right: 6px;
+}
+
+/* 26. Messaging drawer: width 300px and white background */
+.linkedin-messaging-drawer {
+  width: 300px !important;
+  background-color: #ffffff !important;
+  position: fixed;
+  bottom: 0;
+  right: 1.5rem;
+  z-index: 1040;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: 1px solid var(--linkedin-border);
+  border-bottom: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Post Action Button */
+.post-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: var(--linkedin-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.post-action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--linkedin-text-main);
+}
+
+.post-action-btn.active {
+  color: var(--linkedin-blue);
+}
+
+/* Search input container */
+.linkedin-search-box {
+  background-color: #edf3f8;
+  border-radius: 4px;
+  padding: 0 12px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+
+.linkedin-search-box:focus-within {
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px #0a66c2;
+}
+
+.linkedin-search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: var(--linkedin-text-main);
+}
+
+.linkedin-search-box input::placeholder {
+  color: #666666;
+}
+
+/* Right panel footer links */
+.footer-link {
+  font-size: 12px;
+  color: #666666;
+  text-decoration: none;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--linkedin-blue);
+  text-decoration: underline;
+}
+
+/* Student Badge / Banner */
+.assignment-banner {
+  background: linear-gradient(90deg, #0a66c2 0%, #004182 100%);
+  color: #ffffff;
+  font-size: 13px;
+}
